@@ -1,5 +1,26 @@
 {
-  "itemGroup.hawaiianfusion": "Hawaiian Fusion",
-  "block.examplemod.example_block": "Example Block",
-  "item.examplemod.example_item": "Example Item"
+  "itemGroup.hawaiiannei": "Hawaii Nei",
+  "item.hawaiinei.morphite_ingot": "Morphite Ingot",
+  "item.hawaiinei.raw_morphite": "Raw Morphite",
+  "item.hawaiinei.morphite_chisel": "Morphite Chisel",
+
+  "item.hawaiinei.poke_bowl": "Poke Bowl",
+  "item.hawaiinei.hot_stone": "Hot Stone",
+  "item.hawaiinei.hot_sand": "Hot Sand",
+
+  "block.hawaiinei.morphite_block": "Block of Morphite",
+  "block.hawaiinei.morphite_ore": "Morphite Ore",
+  "block.hawaiinei.deepslate_morphite_ore": "Deepslate Morphite Ore",
+  "block.hawaiinei.morphite_magic_block": "Magical Morphite",
+
+  "creativetab.hawaiinei.hawaiinei_items": "Hawai`i Nei Items",
+  "creativetab.hawaiinei.hawaiinei_blocks": "Hawai`i Nei Blocks",
+
+  "tooltip.hawaiinei.morphite_magic_block.tooltip": "Strange Alchemical Device, known for altering §9Morphite§r",
+
+  "tooltip.hawaiinei.morphite_chisel.shift_down": "The Chisel will turn blocks into bricks",
+  "tooltip.hawaiinei.morphite_chisel": "Press §eShift§r for more Info",
+
+  "tooltip.hawaiinei.poke_bowl.tooltip": "Ahi Tuna Poke Bowl"
+
 }
