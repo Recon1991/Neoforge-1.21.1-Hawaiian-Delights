@@ -7,8 +7,8 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.reconhalcyon.practicemod.PracticeMod;
-import net.reconhalcyon.practicemod.block.ModBlocks;
+import net.reconhalcyon.hawaiinei.HawaiiNei;
+import net.reconhalcyon.hawaiinei.block.ModBlocks;
 
 import java.util.function.Supplier;
 
@@ -30,7 +30,7 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> PREVIEW_BLOCK_TAB = CREATIVE_MODE_TAB.register("hawaiinei_blocks_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.MORPHITE_BLOCK))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(PracticeMod.MOD_ID, "preview_items_tab"))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(HawaiiNei.MOD_ID, "hawaiinei_items_tab"))
                     .title(Component.translatable("creativetab.hawaiinei.hawaiinei_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.MORPHITE_BLOCK);

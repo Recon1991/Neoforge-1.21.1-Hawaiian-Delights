@@ -1,5 +1,6 @@
 package net.reconhalcyon.hawaiinei.datagen;
 
+import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -30,7 +31,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
         add(ModBlocks.MORPHITE_ORE.get(),
                 block -> createOreDrop(ModBlocks.MORPHITE_ORE.get(), ModItems.RAW_MORPHITE.get()));
-
+        add(ModBlocks.DEEPSLATE_MORPHITE_ORE.get(),
+                block -> createMultipleOreDrops(ModBlocks.DEEPSLATE_MORPHITE_ORE.get(), ModItems.RAW_MORPHITE.get(), 2, 5));
 
     }
 
