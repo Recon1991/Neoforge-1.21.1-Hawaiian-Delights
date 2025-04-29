@@ -2,6 +2,7 @@
   "item.hawaiinei.morphite_ingot": "Morphite Ingot",
   "item.hawaiinei.raw_morphite": "Raw Morphite",
   "item.hawaiinei.morphite_chisel": "Morphite Chisel",
+  "item.hawaiinei.ulua_rod": "Ulua Rod",
 
   "item.hawaiinei.poke_bowl": "Poke Bowl",
   "item.hawaiinei.hot_stone": "Hot Stone",
@@ -19,6 +20,8 @@
 
   "tooltip.hawaiinei.morphite_chisel.shift_down": "The Chisel will turn blocks into bricks",
   "tooltip.hawaiinei.morphite_chisel": "Press §eShift§r for more Info",
+  "tooltip.hawaiinei.ulua_rod.shift_down": "Used to catch Ulua",
+  "tooltip.hawaiinei.ulua_rod": "Press §eShift§r for more Info",
 
   "tooltip.hawaiinei.poke_bowl.tooltip": "Ahi Tuna Poke Bowl"
 

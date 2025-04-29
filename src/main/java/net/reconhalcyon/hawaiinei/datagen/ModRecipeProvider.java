@@ -1,5 +1,7 @@
 package net.reconhalcyon.hawaiinei.datagen;
 
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.reconhalcyon.hawaiinei.HawaiiNei;
 import net.reconhalcyon.hawaiinei.block.ModBlocks;
 import net.reconhalcyon.hawaiinei.item.ModItems;
@@ -29,6 +31,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("MMM")
                 .define('M', ModItems.MORPHITE_INGOT.get())
                 .unlockedBy("has_morphite_ingot", has(ModItems.MORPHITE_INGOT)).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ULUA_ROD.get())
+                .define('#', Items.STICK)
+                .define('X', Items.STRING)
+                .define('T', Items.IRON_INGOT)
+                .pattern("  #")
+                .pattern(" TX")
+                .pattern("# X")
+                .unlockedBy("has_string", has(Items.STRING))
+                .save(recipeOutput);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.MORPHITE_INGOT.get(), 9)
                 .requires(ModBlocks.MORPHITE_BLOCK)
