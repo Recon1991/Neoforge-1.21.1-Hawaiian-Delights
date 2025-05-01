@@ -28,9 +28,16 @@ public class ModItems {
 
     // Custom Tools
     public static final DeferredItem<Item> MORPHITE_CHISEL = ITEMS.register("morphite_chisel",
-            () -> new ChiselItem(new Item.Properties().durability(1024)));
+            () -> new ChiselItem(new Item.Properties().durability(1024).stacksTo(1)));
     public static final DeferredItem<Item> FISHING_SPEAR = ITEMS.register("fishing_spear",
-            () -> new FishingSpearItem(new Item.Properties().durability(1024)));
+            () -> new FishingSpearItem(new Item.Properties().durability(64).stacksTo(1)) {
+                @Override
+                public void appendHoverText(@Nonnull ItemStack stack, @Nonnull Item.TooltipContext context, @Nonnull List<Component> tooltipComponents, @Nonnull TooltipFlag tooltipFlag) {
+                    TooltipUtils.addShiftTooltip(tooltipComponents, "tooltip.hawaiinei.fishing_spear");
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+
     // Custom Tools - Fishing Rods
     public static final DeferredItem<Item> ULUA_ROD = ITEMS.register("ulua_rod",
             () -> new FishingRodItem(new Item.Properties().durability(1024)){

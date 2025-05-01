@@ -33,20 +33,20 @@ public class FishingSpearItem extends Item {
                 if (world.getBlockState(pos).getFluidState().is(FluidTags.WATER)) {
 
                     // Catch the beef
-                    ItemStack beef = new ItemStack(Items.BEEF);
-                    if (!player.getInventory().add(beef)) {
-                        player.drop(beef, false);
+                    ItemStack fish = new ItemStack(Items.COD);
+                    if (!player.getInventory().add(fish)) {
+                        player.drop(fish, false);
                     }
 
                     if (world instanceof ServerLevel serverLevel) {
-                        itemStack.hurtAndBreak(15, serverLevel, player,
+                        itemStack.hurtAndBreak(1, serverLevel, player,
                                 (brokenItem) -> player.onEquippedItemBroken(brokenItem,
                                         hand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND));
                     }
 
                     player.getCooldowns().addCooldown(this, 100);
 
-                    world.playSound(null, pos, SoundEvents.FISHING_BOBBER_SPLASH, SoundSource.PLAYERS, 1.0F, 1.2F);
+                    world.playSound(null, pos, SoundEvents.FISHING_BOBBER_SPLASH, SoundSource.PLAYERS, 1.0F, 0.9F / (world.getRandom().nextFloat() * 0.4F + 0.8F));
                 }
             }
 
