@@ -29,6 +29,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ULUA_ROD);
                         output.accept(ModItems.BOAT_ROD);
                         output.accept(ModItems.NOT_SO_PRETTY_STIC);
+                        output.accept(ModItems.FISHING_SPEAR);
 
                     }).build());
 

@@ -9,7 +9,7 @@ import java.util.List;
 public class TooltipUtils {
     public static void addShiftTooltip(List<Component> tooltip, String baseKey) {
         if (Screen.hasShiftDown()) {
-            tooltip.add(Component.translatable(baseKey + ".shift_down").withStyle(ChatFormatting.AQUA));
+            tooltip.add(Component.translatable(baseKey + ".shift_down").withStyle(ChatFormatting.GRAY));
         } else {
             tooltip.add(Component.translatable("tooltip.shift_prompt").withStyle(ChatFormatting.DARK_AQUA));
         }

@@ -14,6 +14,8 @@ public class ModDataMapProvider extends DataMapProvider {
         super(packOutput, lookupProvider);
     }
 
+    // NOTE: gather is deprecated, will need to refactor in newer versions
+    @SuppressWarnings("deprecation")
     @Override
     protected void gather() {
         this.builder(NeoForgeDataMaps.FURNACE_FUELS)
