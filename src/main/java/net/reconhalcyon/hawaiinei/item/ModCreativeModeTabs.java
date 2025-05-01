@@ -27,6 +27,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.HOT_SAND);
                         output.accept(ModItems.HOT_STONE);
                         output.accept(ModItems.ULUA_ROD);
+                        output.accept(ModItems.BOAT_ROD);
+                        output.accept(ModItems.NOT_SO_PRETTY_STIC);
+
                     }).build());
 
     public static final Supplier<CreativeModeTab> PREVIEW_BLOCK_TAB = CREATIVE_MODE_TAB.register("hawaiinei_blocks_tab",

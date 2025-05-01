@@ -42,6 +42,26 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_string", has(Items.STRING))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BOAT_ROD.get())
+                .define('#', Items.STICK)
+                .define('X', Items.STRING)
+                .define('T', Items.IRON_INGOT)
+                .pattern("  T")
+                .pattern(" #X")
+                .pattern("# X")
+                .unlockedBy("has_string", has(Items.STRING))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.NOT_SO_PRETTY_STIC.get())
+                .define('#', Items.STICK)
+                .define('X', Items.STRING)
+                .define('T', Items.IRON_INGOT)
+                .pattern("  #")
+                .pattern(" #X")
+                .pattern("T X")
+                .unlockedBy("has_string", has(Items.STRING))
+                .save(recipeOutput);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.MORPHITE_INGOT.get(), 9)
                 .requires(ModBlocks.MORPHITE_BLOCK)
                 .unlockedBy("has_morphite_block", has(ModBlocks.MORPHITE_BLOCK))

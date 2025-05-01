@@ -1,8 +1,12 @@
 {
+  "tooltip.shift_prompt": "Press §eShift§r for more Info",
+
   "item.hawaiinei.morphite_ingot": "Morphite Ingot",
   "item.hawaiinei.raw_morphite": "Raw Morphite",
   "item.hawaiinei.morphite_chisel": "Morphite Chisel",
   "item.hawaiinei.ulua_rod": "Ulua Rod",
+  "item.hawaiinei.boat_rod": "One Boat Rod",
+  "item.hawaiinei.not_so_pretty_stic": "Not So Pretty Stic",
 
   "item.hawaiinei.poke_bowl": "Poke Bowl",
   "item.hawaiinei.hot_stone": "Hot Stone",
@@ -16,12 +20,13 @@
   "creativetab.hawaiinei.hawaiinei_items": "Hawai`i Nei Items",
   "creativetab.hawaiinei.hawaiinei_blocks": "Hawai`i Nei Blocks",
 
+
   "tooltip.hawaiinei.morphite_magic_block.tooltip": "Strange Alchemical Device, known for altering §9Morphite§r",
 
   "tooltip.hawaiinei.morphite_chisel.shift_down": "The Chisel will turn blocks into bricks",
-  "tooltip.hawaiinei.morphite_chisel": "Press §eShift§r for more Info",
-  "tooltip.hawaiinei.ulua_rod.shift_down": "Used to catch Ulua",
-  "tooltip.hawaiinei.ulua_rod": "Press §eShift§r for more Info",
+  "tooltip.hawaiinei.ulua_rod.shift_down": "Used to catch Ulua and Tuna",
+  "tooltip.hawaiinei.boat_rod.shift_down": "Used when Fishing from a Boat",
+  "tooltip.hawaiinei.not_so_pretty_stic.shift_down": "The Not So Pretty Stic, Good for Fishing",
 
   "tooltip.hawaiinei.poke_bowl.tooltip": "Ahi Tuna Poke Bowl"
 

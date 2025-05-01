@@ -11,6 +11,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.reconhalcyon.hawaiinei.HawaiiNei;
 import net.reconhalcyon.hawaiinei.item.custom.ChiselItem;
 import net.reconhalcyon.hawaiinei.item.custom.FuelItem;
+import net.reconhalcyon.hawaiinei.util.TooltipUtils;
 
 import java.util.List;
 
@@ -27,14 +28,37 @@ public class ModItems {
     public static final DeferredItem<Item> MORPHITE_CHISEL = ITEMS.register("morphite_chisel",
             () -> new ChiselItem(new Item.Properties().durability(1024)));
     public static final DeferredItem<Item> ULUA_ROD = ITEMS.register("ulua_rod",
-            () -> new FishingRodItem(new Item.Properties().durability(1024)));
+            () -> new FishingRodItem(new Item.Properties().durability(1024)){
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    TooltipUtils.addShiftTooltip(tooltipComponents,"tooltip.hawaiinei.ulua_rod");
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> BOAT_ROD = ITEMS.register("boat_rod",
+            () -> new FishingRodItem(new Item.Properties().durability(1024)){
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    TooltipUtils.addShiftTooltip(tooltipComponents,"tooltip.hawaiinei.boat_rod");
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+
+    public static final DeferredItem<Item> NOT_SO_PRETTY_STIC = ITEMS.register("not_so_pretty_stic",
+            () -> new FishingRodItem(new Item.Properties().durability(1024)){
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    TooltipUtils.addShiftTooltip(tooltipComponents,"tooltip.hawaiinei.not_so_pretty_stic");
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
 
     // Custom Food
     public static final DeferredItem<Item> POKE_BOWL = ITEMS.register("poke_bowl",
             () -> new Item(new Item.Properties().food(ModFoodProperties.POKE_BOWL)){
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-                    tooltipComponents.add(Component.translatable("tooltip.hawaiinei.poke_bowl.tooltip"));
+                    TooltipUtils.addShiftTooltip(tooltipComponents,"tooltip.hawaiinei.poke_bowl"));
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });
