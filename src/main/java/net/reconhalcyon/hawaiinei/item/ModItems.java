@@ -10,6 +10,7 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.reconhalcyon.hawaiinei.HawaiiNei;
 import net.reconhalcyon.hawaiinei.item.custom.ChiselItem;
+import net.reconhalcyon.hawaiinei.item.custom.FishingSpearItem;
 import net.reconhalcyon.hawaiinei.item.custom.FuelItem;
 import net.reconhalcyon.hawaiinei.util.TooltipUtils;
 
@@ -28,6 +29,9 @@ public class ModItems {
     // Custom Tools
     public static final DeferredItem<Item> MORPHITE_CHISEL = ITEMS.register("morphite_chisel",
             () -> new ChiselItem(new Item.Properties().durability(1024)));
+    public static final DeferredItem<Item> FISHING_SPEAR = ITEMS.register("fishing_spear",
+            () -> new FishingSpearItem(new Item.Properties().durability(1024)));
+    // Custom Tools - Fishing Rods
     public static final DeferredItem<Item> ULUA_ROD = ITEMS.register("ulua_rod",
             () -> new FishingRodItem(new Item.Properties().durability(1024)){
                 @Override
@@ -44,7 +48,6 @@ public class ModItems {
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });
-
     public static final DeferredItem<Item> NOT_SO_PRETTY_STIC = ITEMS.register("not_so_pretty_stic",
             () -> new FishingRodItem(new Item.Properties().durability(1024)){
                 @Override

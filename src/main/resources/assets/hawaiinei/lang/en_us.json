@@ -20,10 +20,10 @@
   "creativetab.hawaiinei.hawaiinei_items": "Hawai`i Nei Items",
   "creativetab.hawaiinei.hawaiinei_blocks": "Hawai`i Nei Blocks",
 
-
   "tooltip.hawaiinei.morphite_magic_block.tooltip": "Strange Alchemical Device, known for altering §9Morphite§r",
 
   "tooltip.hawaiinei.morphite_chisel.shift_down": "The Chisel will turn blocks into bricks",
+  "tooltip.hawaiinei.fishing_spear.shift_down": "Stab around and fish out",
   "tooltip.hawaiinei.ulua_rod.shift_down": "Used to catch Ulua and Tuna",
   "tooltip.hawaiinei.boat_rod.shift_down": "Used when Fishing from a Boat",
   "tooltip.hawaiinei.not_so_pretty_stic.shift_down": "The Not So Pretty Stic, Good for Fishing",

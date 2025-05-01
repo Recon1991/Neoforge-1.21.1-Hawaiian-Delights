@@ -20,6 +20,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Tools
         basicItem(ModItems.MORPHITE_CHISEL.get());
         basicItem(ModItems.ULUA_ROD.get());
+        basicItem(ModItems.BOAT_ROD.get());
+        basicItem(ModItems.NOT_SO_PRETTY_STIC.get());
+        basicItem(ModItems.FISHING_SPEAR.get());
 
         // Food Items
         basicItem(ModItems.POKE_BOWL.get());
