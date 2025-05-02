@@ -9,6 +9,8 @@
   "item.hawaiinei.not_so_pretty_stic": "Not So Pretty Stic",
   "item.hawaiinei.fishing_spear": "Fishing Spear",
 
+  "item.hawaiinei.yellowfin_tuna": "Yellowfin Tuna",
+
   "item.hawaiinei.poke_bowl": "Poke Bowl",
   "item.hawaiinei.hot_stone": "Hot Stone",
   "item.hawaiinei.hot_sand": "Hot Sand",
@@ -20,6 +22,7 @@
 
   "creativetab.hawaiinei.hawaiinei_items": "Hawai`i Nei Items",
   "creativetab.hawaiinei.hawaiinei_blocks": "Hawai`i Nei Blocks",
+  "creativetab.hawaiinei.hawaiinei_fish": "Hawai`i Nei Fish",
 
   "tooltip.hawaiinei.morphite_magic_block.tooltip": "Strange Alchemical Device, known for altering §9Morphite§r",
 
@@ -29,6 +32,6 @@
   "tooltip.hawaiinei.boat_rod.shift_down": "Used when Fishing from a Boat",
   "tooltip.hawaiinei.not_so_pretty_stic.shift_down": "The Not So Pretty Stic, Good for Fishing",
 
-  "tooltip.hawaiinei.poke_bowl.tooltip": "Ahi Tuna Poke Bowl"
+  "tooltip.hawaiinei.poke_bowl.shift_down": "Ahi Tuna Poke Bowl"
 
 }

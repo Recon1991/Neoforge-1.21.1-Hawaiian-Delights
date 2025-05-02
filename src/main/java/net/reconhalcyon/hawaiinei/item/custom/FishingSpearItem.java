@@ -26,18 +26,20 @@ public class FishingSpearItem extends Item {
     public @NotNull InteractionResultHolder<ItemStack> use(Level world, Player player, @NotNull InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
 
+        // Ray Cast Check for Fluid Source Block
         if (!world.isClientSide && !player.getCooldowns().isOnCooldown(this)) {
             BlockHitResult blockHit = Item.getPlayerPOVHitResult(world, player, ClipContext.Fluid.SOURCE_ONLY);
             BlockPos pos = blockHit.getBlockPos();
 
+                // Check for WATER FluidTags
                 if (world.getBlockState(pos).getFluidState().is(FluidTags.WATER)) {
 
-                    // Catch the beef
+                    // 'Catch' the beef
                     ItemStack fish = new ItemStack(Items.COD);
                     if (!player.getInventory().add(fish)) {
                         player.drop(fish, false);
                     }
-
+                    // Tool durability hurt
                     if (world instanceof ServerLevel serverLevel) {
                         itemStack.hurtAndBreak(1, serverLevel, player,
                                 (brokenItem) -> player.onEquippedItemBroken(brokenItem,

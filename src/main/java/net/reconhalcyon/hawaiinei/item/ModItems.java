@@ -1,10 +1,7 @@
 package net.reconhalcyon.hawaiinei.item;
 
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.FishingRodItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -74,6 +71,10 @@ public class ModItems {
                 }
             });
 
+    // Hawaiian Fish
+    public static final DeferredItem<Item> YELLOWFIN_TUNA = ITEMS.register("yellowfin_tuna",
+            () -> new Item(new Item.Properties()));
+
     // Custom Fuel
     public static final DeferredItem<Item> HOT_STONE = ITEMS.register("hot_stone",
             () -> new FuelItem(new Item.Properties(), 800));
@@ -86,3 +87,4 @@ public class ModItems {
         ITEMS.register(eventBus);
     }
 }
+

@@ -44,6 +44,15 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MORPHITE_MAGIC_BLOCK);
                     }).build());
 
+    public static final Supplier<CreativeModeTab> PREVIEW_FISH_TAB = CREATIVE_MODE_TAB.register("hawaiinei_fish_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.YELLOWFIN_TUNA.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(HawaiiNei.MOD_ID, "hawaiinei_fish_tab"))
+                    .title(Component.translatable("creativetab.hawaiinei.hawaiinei_fish"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.YELLOWFIN_TUNA);
+
+                    }).build());
+
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TAB.register(eventBus);
     }

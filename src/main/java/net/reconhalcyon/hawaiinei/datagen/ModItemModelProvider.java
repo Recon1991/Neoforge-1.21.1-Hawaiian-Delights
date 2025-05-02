@@ -27,6 +27,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Food Items
         basicItem(ModItems.POKE_BOWL.get());
 
+        // Hawaiian Fish
+        basicItem(ModItems.YELLOWFIN_TUNA.get());
+
         // Fuel Items
         basicItem(ModItems.HOT_SAND.get());
         basicItem(ModItems.HOT_STONE.get());
