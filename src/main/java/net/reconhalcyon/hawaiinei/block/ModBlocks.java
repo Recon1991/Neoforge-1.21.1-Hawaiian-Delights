@@ -4,6 +4,7 @@ import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -12,6 +13,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.reconhalcyon.hawaiinei.HawaiiNei;
 import net.reconhalcyon.hawaiinei.block.custom.MorphiteMagicBlock;
+import net.reconhalcyon.hawaiinei.block.custom.TiPlantBlock;
 import net.reconhalcyon.hawaiinei.item.ModItems;
 
 import java.util.function.Supplier;
@@ -33,6 +35,10 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> MORPHITE_MAGIC_BLOCK = registerBlock("morphite_magic_block",
             () -> new MorphiteMagicBlock(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> TI_PLANT = BLOCKS.register("ti_plant",
+            () -> new TiPlantBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SWEET_BERRY_BUSH)));
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

@@ -33,5 +33,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Fuel Items
         basicItem(ModItems.HOT_SAND.get());
         basicItem(ModItems.HOT_STONE.get());
+
+        // Crops & Plants
+        basicItem(ModItems.TI_LEAF.get());
     }
 }

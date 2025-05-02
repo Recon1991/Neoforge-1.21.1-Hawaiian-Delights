@@ -30,6 +30,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BOAT_ROD);
                         output.accept(ModItems.NOT_SO_PRETTY_STIC);
                         output.accept(ModItems.FISHING_SPEAR);
+                        output.accept(ModItems.TI_PLANT_STALK);
 
                     }).build());
 
@@ -46,7 +47,7 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> PREVIEW_FISH_TAB = CREATIVE_MODE_TAB.register("hawaiinei_fish_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.YELLOWFIN_TUNA.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(HawaiiNei.MOD_ID, "hawaiinei_fish_tab"))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(HawaiiNei.MOD_ID, "hawaiinei_blocks_tab"))
                     .title(Component.translatable("creativetab.hawaiinei.hawaiinei_fish"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.YELLOWFIN_TUNA);

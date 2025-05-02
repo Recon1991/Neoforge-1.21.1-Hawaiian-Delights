@@ -6,6 +6,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.reconhalcyon.hawaiinei.HawaiiNei;
+import net.reconhalcyon.hawaiinei.block.ModBlocks;
 import net.reconhalcyon.hawaiinei.item.custom.ChiselItem;
 import net.reconhalcyon.hawaiinei.item.custom.FishingSpearItem;
 import net.reconhalcyon.hawaiinei.item.custom.FuelItem;
@@ -60,6 +61,12 @@ public class ModItems {
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });
+
+    // Custom Crops & Plants
+    public static final DeferredItem<Item> TI_LEAF = ITEMS.register("ti_leaf",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> TI_PLANT_STALK = ITEMS.register("ti_plant_stalk",
+            () -> new ItemNameBlockItem(ModBlocks.TI_PLANT.get(), new Item.Properties()));
 
     // Custom Food
     public static final DeferredItem<Item> POKE_BOWL = ITEMS.register("poke_bowl",
