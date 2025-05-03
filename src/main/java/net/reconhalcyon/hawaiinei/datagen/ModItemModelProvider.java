@@ -36,5 +36,6 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         // Crops & Plants
         basicItem(ModItems.TI_LEAF.get());
+        basicItem(ModItems.TI_PLANT_STALK.get());
     }
 }
