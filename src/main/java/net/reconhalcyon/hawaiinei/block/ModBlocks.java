@@ -37,7 +37,7 @@ public class ModBlocks {
             () -> new MorphiteMagicBlock(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> TI_PLANT = BLOCKS.register("ti_plant",
-            () -> new TiPlantBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
+            () -> new TiPlantBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SWEET_BERRY_BUSH)));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

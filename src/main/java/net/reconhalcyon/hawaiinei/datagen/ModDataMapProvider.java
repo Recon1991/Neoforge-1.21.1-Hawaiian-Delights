@@ -27,6 +27,7 @@ public class ModDataMapProvider extends DataMapProvider {
                 .add(ModItems.TI_LEAF.getId(), new Compostable(0.6F, true), false)
                 .add(ModItems.TI_PLANT_STALK.getId(), new Compostable(0.8F, true), false);
 
+
     }
 
 }

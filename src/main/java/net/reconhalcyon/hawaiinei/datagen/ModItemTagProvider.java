@@ -3,8 +3,11 @@ package net.reconhalcyon.hawaiinei.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.reconhalcyon.hawaiinei.HawaiiNei;
 import net.reconhalcyon.hawaiinei.item.ModItems;
@@ -25,5 +28,13 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.MORPHITE_INGOT.get())
                 .add(ModItems.RAW_MORPHITE.get())
                 .add(Items.BOWL);
+
+        tag(ItemTags.COW_FOOD)
+                .add(ModItems.TI_LEAF.get())
+                .add(ModItems.TI_PLANT_STALK.get());
+
+        tag(ItemTags.PIG_FOOD)
+                .add(ModItems.TI_LEAF.get())
+                .add(ModItems.TI_PLANT_STALK.get());
     }
 }
