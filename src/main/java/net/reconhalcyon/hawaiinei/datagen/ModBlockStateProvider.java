@@ -31,6 +31,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.MORPHITE_MAGIC_BLOCK);
 
         makeCrop(((TiPlantBlock) ModBlocks.TI_PLANT.get()), "ti_plant_stage", "ti_plant_stage");
+
+        simpleBlock(ModBlocks.HIBISCUS_RED.get(),
+                models().cross(blockTexture(ModBlocks.HIBISCUS_RED.get()).getPath(), blockTexture(ModBlocks.HIBISCUS_RED.get())).renderType("cutout"));
+        simpleBlock(ModBlocks.POTTED_HIBISCUS_RED.get(), models().singleTexture("potted_hibiscus_red", ResourceLocation.parse("flower_pot_cross"), "plant",
+                blockTexture(ModBlocks.HIBISCUS_RED.get())).renderType("cutout"));
     }
 
     private void leavesBlock(DeferredBlock<Block> deferredBlock) {

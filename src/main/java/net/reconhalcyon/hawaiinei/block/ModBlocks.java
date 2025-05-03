@@ -3,10 +3,7 @@ package net.reconhalcyon.hawaiinei.block;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.DropExperienceBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -39,6 +36,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> TI_PLANT = BLOCKS.register("ti_plant",
             () -> new TiPlantBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SWEET_BERRY_BUSH)));
 
+    public static final DeferredBlock<Block> HIBISCUS_RED = registerBlock("hibiscus_red",
+            () -> new FlowerBlock(null, 0, BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM)));
+    public static final DeferredBlock<Block> POTTED_HIBISCUS_RED = BLOCKS.register("potted_hibiscus_red",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), HIBISCUS_RED, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

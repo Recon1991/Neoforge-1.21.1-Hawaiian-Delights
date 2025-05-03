@@ -42,6 +42,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(TiPlantBlock.AGE, 5));
         this.add(ModBlocks.TI_PLANT.get(), this.createCropDrops(ModBlocks.TI_PLANT.get(),
                 ModItems.TI_LEAF.get(), ModItems.TI_PLANT_STALK.asItem(), lootItemConditionBuilder));
+
+        this.dropSelf(ModBlocks.HIBISCUS_RED.get());
+        this.add(ModBlocks.POTTED_HIBISCUS_RED.get(), createPotFlowerItemTable(ModBlocks.HIBISCUS_RED));
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {

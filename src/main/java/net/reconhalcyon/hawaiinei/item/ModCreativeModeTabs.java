@@ -31,6 +31,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.NOT_SO_PRETTY_STIC);
                         output.accept(ModItems.FISHING_SPEAR);
                         output.accept(ModItems.TI_PLANT_STALK);
+                        output.accept(ModBlocks.HIBISCUS_RED);
+
+
 
                     }).build());
 
