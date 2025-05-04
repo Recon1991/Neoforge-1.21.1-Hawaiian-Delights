@@ -1,6 +1,7 @@
 package net.reconhalcyon.hawaiinei.block;
 
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -37,7 +38,7 @@ public class ModBlocks {
             () -> new TiPlantBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SWEET_BERRY_BUSH)));
 
     public static final DeferredBlock<Block> HIBISCUS_RED = registerBlock("hibiscus_red",
-            () -> new FlowerBlock(null, 0, BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM)));
+            () -> new FlowerBlock(MobEffects.ABSORPTION, 0, BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM)));
     public static final DeferredBlock<Block> POTTED_HIBISCUS_RED = BLOCKS.register("potted_hibiscus_red",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), HIBISCUS_RED, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM)));
 
