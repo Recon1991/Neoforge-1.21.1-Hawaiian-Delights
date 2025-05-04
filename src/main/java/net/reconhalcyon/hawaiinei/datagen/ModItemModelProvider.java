@@ -33,6 +33,11 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         // Hawaiian Fish
         basicItem(ModItems.YELLOWFIN_TUNA.get());
+        basicItem(ModItems.BONEFISH.get());
+        basicItem(ModItems.EYESTRIPE_SURGEONFISH.get());
+        basicItem(ModItems.HOGFISH.get());
+        basicItem(ModItems.SQUIRRELFISH.get());
+        basicItem(ModItems.STRIPPED_MULLET.get());
 
         // Fuel Items
         basicItem(ModItems.HOT_SAND.get());

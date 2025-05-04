@@ -82,6 +82,16 @@ public class ModItems {
     // Hawaiian Fish
     public static final DeferredItem<Item> YELLOWFIN_TUNA = ITEMS.register("yellowfin_tuna",
             () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BONEFISH = ITEMS.register("bonefish",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> EYESTRIPE_SURGEONFISH = ITEMS.register("eyestripe_surgeonfish",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> SQUIRRELFISH = ITEMS.register("squirrelfish",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> HOGFISH = ITEMS.register("hogfish",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> STRIPPED_MULLET = ITEMS.register("stripped_mullet",
+            () -> new Item(new Item.Properties()));
 
     // Custom Fuel
     public static final DeferredItem<Item> HOT_STONE = ITEMS.register("hot_stone",

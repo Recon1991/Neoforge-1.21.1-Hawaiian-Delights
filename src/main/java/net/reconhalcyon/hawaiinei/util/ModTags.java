@@ -18,6 +18,7 @@ public class ModTags {
 
     public static class Items {
         public static final TagKey<Item> TRANSFORMABLE_ITEMS = createTag("transformable_items");
+        public static final TagKey<Item> HAWAIINEI_FISH = createTag("hawaiinei_fish");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(HawaiiNei.MOD_ID, name));

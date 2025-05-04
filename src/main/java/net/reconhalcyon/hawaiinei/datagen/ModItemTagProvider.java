@@ -29,6 +29,14 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.RAW_MORPHITE.get())
                 .add(Items.BOWL);
 
+        tag(ModTags.Items.HAWAIINEI_FISH)
+                .add(ModItems.BONEFISH.get())
+                .add(ModItems.EYESTRIPE_SURGEONFISH.get())
+                .add(ModItems.HOGFISH.get())
+                .add(ModItems.SQUIRRELFISH.get())
+                .add(ModItems.STRIPPED_MULLET.get())
+                .add(ModItems.YELLOWFIN_TUNA.get());
+
         tag(ItemTags.COW_FOOD)
                 .add(ModItems.TI_LEAF.get())
                 .add(ModItems.TI_PLANT_STALK.get());
