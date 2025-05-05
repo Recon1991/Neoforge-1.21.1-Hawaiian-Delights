@@ -1,14 +1,17 @@
 {
   "tooltip.shift_prompt": "Press §eShift§r for more Info",
 
+  "Material List": "",
   "item.hawaiinei.morphite_ingot": "Morphite Ingot",
   "item.hawaiinei.raw_morphite": "Raw Morphite",
+  "tooltip.hawaiinei.raw_morphite": "This chunk of ore pulses with latent energy.",
   "item.hawaiinei.morphite_chisel": "Morphite Chisel",
   "item.hawaiinei.ulua_rod": "Ulua Rod",
   "item.hawaiinei.boat_rod": "One Boat Rod",
   "item.hawaiinei.not_so_pretty_stic": "Not So Pretty Stic",
   "item.hawaiinei.fishing_spear": "Fishing Spear",
 
+  "Hawaiian Fish List": "",
   "item.hawaiinei.bonefish": "Bonefish",
   "item.hawaiinei.eyestripe_surgeonfish": "Eyestripe Surgeonfish",
   "item.hawaiinei.hogfish": "Hogfish",
@@ -16,10 +19,12 @@
   "item.hawaiinei.stripped_mullet": "Stripped Mullet",
   "item.hawaiinei.yellowfin_tuna": "Yellowfin Tuna",
 
+  "Hawaiian Cuisine": "",
   "item.hawaiinei.poke_bowl": "Poke Bowl",
   "item.hawaiinei.hot_stone": "Hot Stone",
   "item.hawaiinei.hot_sand": "Hot Sand",
 
+  "Hawaiian Crops/Plants": "",
   "item.hawaiinei.ti_plant_stalk": "Ti Plant Stalk",
   "item.hawaiinei.ti_leaf": "Ti Leaf",
   "block.hawaiinei.ti_plant": "Ti Plant",
