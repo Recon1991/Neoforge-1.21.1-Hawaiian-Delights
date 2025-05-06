@@ -11,6 +11,7 @@ import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.reconhalcyon.hawaiinei.HawaiiNei;
 import net.reconhalcyon.hawaiinei.item.ModItems;
+import net.reconhalcyon.hawaiinei.item.groups.MaterialItems;
 import net.reconhalcyon.hawaiinei.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
@@ -25,7 +26,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(ModTags.Items.TRANSFORMABLE_ITEMS)
-                .add(ModItems.MORPHITE_INGOT.get())
+                .add(MaterialItems.MORPHITE_INGOT.get())
                 .add(ModItems.RAW_MORPHITE.get())
                 .add(Items.BOWL);
 

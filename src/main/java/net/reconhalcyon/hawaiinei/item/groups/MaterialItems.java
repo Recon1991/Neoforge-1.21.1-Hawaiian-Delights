@@ -5,9 +5,26 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.reconhalcyon.hawaiinei.item.ModItems;
 import net.reconhalcyon.hawaiinei.util.TooltipItem;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class MaterialItems {
-    public static final DeferredItem<Item> MORPHITE_INGOT = ModItems.ITEMS.register("morphite_ingot",
-            () -> new TooltipItem(new Item.Properties(), "tooltip.hawaiinei.morphite_ingot"));
-    public static final DeferredItem<Item> RAW_MORPHITE = ModItems.ITEMS.register("raw_morphite",
-            () -> new TooltipItem(new Item.Properties(), "raw_morphite"));
+    public static final Map<String, DeferredItem<Item>> ALL = new LinkedHashMap<>();
+
+    public static final DeferredItem<Item> MORPHITE_INGOT = registerTooltip("morphite_ingot");
+    public static final DeferredItem<Item> RAW_MORPHITE = registerTooltip("raw_morphite");
+
+    private static DeferredItem<Item> registerTooltip(String name) {
+        DeferredItem<Item> item = ModItems.ITEMS.register(name,
+                () -> new TooltipItem(new Item.Properties(), name));
+        ALL.put(name, item);
+        return item;
+    }
+
+    private static DeferredItem<Item> registerBasic(String name) {
+        DeferredItem<Item> item = ModItems.ITEMS.register(name,
+                () -> new Item(new Item.Properties()));
+        ALL.put(name, item);
+        return item;
+    }
 }

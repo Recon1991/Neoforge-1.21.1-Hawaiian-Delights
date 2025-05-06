@@ -1,4 +1,4 @@
-package net.reconhalcyon.hawaiinei.item;
+`package net.reconhalcyon.hawaiinei.item;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -33,8 +33,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TI_PLANT_STALK);
                         output.accept(ModBlocks.HIBISCUS_RED);
 
-
-
                     }).build());
 
     public static final Supplier<CreativeModeTab> PREVIEW_BLOCK_TAB = CREATIVE_MODE_TAB.register("hawaiinei_blocks_tab",
@@ -68,3 +66,4 @@ public class ModCreativeModeTabs {
 
 
 }
+`

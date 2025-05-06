@@ -4,6 +4,7 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 import net.reconhalcyon.hawaiinei.block.ModBlocks;
 import net.reconhalcyon.hawaiinei.item.ModCreativeModeTabs;
 import net.reconhalcyon.hawaiinei.item.ModItems;
+import net.reconhalcyon.hawaiinei.item.groups.MaterialItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -55,6 +56,10 @@ public class HawaiiNei {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             ((FlowerPotBlock)Blocks.FLOWER_POT).addPlant(ModBlocks.HIBISCUS_RED.getId(), ModBlocks.POTTED_HIBISCUS_RED);
+
+            net.reconhalcyon.hawaiinei.item.groups.MaterialItems.ALL.forEach((id, item) -> {
+                LOGGER.info("✔ Material item registered: {} → {}", id, item.getId());
+            });
         });
     }
 
@@ -62,8 +67,8 @@ public class HawaiiNei {
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.MORPHITE_INGOT);
-            event.accept(ModItems.RAW_MORPHITE);
+            event.accept(MaterialItems.MORPHITE_INGOT);
+            event.accept(MaterialItems.RAW_MORPHITE);
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {

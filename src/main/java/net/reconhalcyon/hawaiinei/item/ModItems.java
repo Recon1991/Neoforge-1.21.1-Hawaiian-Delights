@@ -7,20 +7,21 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.reconhalcyon.hawaiinei.HawaiiNei;
 import net.reconhalcyon.hawaiinei.block.ModBlocks;
 import net.reconhalcyon.hawaiinei.item.custom.FuelItem;
+import net.reconhalcyon.hawaiinei.item.groups.FishItems;
+import net.reconhalcyon.hawaiinei.item.groups.MaterialItems;
 import net.reconhalcyon.hawaiinei.util.*;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(HawaiiNei.MOD_ID);
 
-    // Custom Tools
-    public static final DeferredItem<Item> MORPHITE_CHISEL = ITEMS.register("morphite_chisel",
-            () -> new TooltipChiselItem(new Item.Properties().durability(1024).stacksTo(1), "tooltip.hawaiinei."));
+    // Materials
+    public static final DeferredItem<Item> RAW_MORPHITE = MaterialItems.RAW_MORPHITE;
+    public static final DeferredItem<Item> MORPHITE_INGOT = MaterialItems.MORPHITE_INGOT;
 
-    // Custom Tools - Fishing Spears
+    // Custom Tools
+
     public static final DeferredItem<Item> FISHING_SPEAR = ITEMS.register("fishing_spear",
             () -> new TooltipFishingSpearItem(new Item.Properties().durability(64).stacksTo(1), TooltipKeys.of("fishing_spear")));
-
-    // Custom Tools - Fishing Rods
     public static final DeferredItem<Item> ULUA_ROD = ITEMS.register("ulua_rod",
             () -> new TooltipFishingRodItem(new Item.Properties().durability(1024), "tooltip.hawaiinei.ulua_rod"));
     public static final DeferredItem<Item> BOAT_ROD = ITEMS.register("boat_rod",
@@ -39,18 +40,12 @@ public class ModItems {
             () -> new TooltipItem(new Item.Properties().food(ModFoodProperties.POKE_BOWL), "poke_bowl"));
 
     // Hawaiian Fish
-    public static final DeferredItem<Item> BONEFISH = ITEMS.register("bonefish",
-            () -> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> EYESTRIPE_SURGEONFISH = ITEMS.register("eyestripe_surgeonfish",
-            () -> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> SQUIRRELFISH = ITEMS.register("squirrelfish",
-            () -> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> HOGFISH = ITEMS.register("hogfish",
-            () -> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> STRIPPED_MULLET = ITEMS.register("stripped_mullet",
-            () -> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> YELLOWFIN_TUNA = ITEMS.register("yellowfin_tuna",
-            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BONEFISH = FishItems.BONEFISH;
+    public static final DeferredItem<Item> EYESTRIPE_SURGEONFISH = FishItems.EYESTRIPE_SURGEONFISH;
+    public static final DeferredItem<Item> SQUIRRELFISH = FishItems.SQUIRRELFISH;
+    public static final DeferredItem<Item> HOGFISH = FishItems.HOGFISH;
+    public static final DeferredItem<Item> STRIPPED_MULLET = FishItems.STRIPPED_MULLET;
+    public static final DeferredItem<Item> YELLOWFIN_TUNA = FishItems.YELLOWFIN_TUNA;
 
     // Custom Fuel
     public static final DeferredItem<Item> HOT_STONE = ITEMS.register("hot_stone",
