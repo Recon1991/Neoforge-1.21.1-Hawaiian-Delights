@@ -99,9 +99,11 @@
   "block.hawaiinei.deepslate_morphite_ore": "Deepslate Morphite Ore",
   "block.hawaiinei.morphite_magic_block": "Magical Morphite",
 
-  "creativetab.hawaiinei.hawaiinei_items": "Hawai`i Nei Items",
-  "creativetab.hawaiinei.hawaiinei_blocks": "Hawai`i Nei Blocks",
-  "creativetab.hawaiinei.hawaiinei_fish": "Hawai`i Nei Fish",
+  "creativetab.hawaiinei.hawaiinei_items": "Hawai`i Nei - Items",
+  "creativetab.hawaiinei.hawaiinei_blocks": "Hawai`i Nei - Blocks",
+  "creativetab.hawaiinei.hawaiinei_fish": "Hawai`i Nei - Fish",
+  "creativetab.hawaiinei.hawaiinei_fuels": "Hawai‘i Nei – Fuels",
+
 
   "tooltip.hawaiinei.morphite_magic_block.tooltip": "Strange Alchemical Device, known for altering §9Morphite§r"
 }
