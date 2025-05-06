@@ -5,6 +5,7 @@ import net.reconhalcyon.hawaiinei.block.ModBlocks;
 import net.reconhalcyon.hawaiinei.item.ModCreativeModeTabs;
 import net.reconhalcyon.hawaiinei.item.ModItems;
 import net.reconhalcyon.hawaiinei.item.groups.MaterialItems;
+import net.reconhalcyon.hawaiinei.item.groups.ToolItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -57,9 +58,9 @@ public class HawaiiNei {
         event.enqueueWork(() -> {
             ((FlowerPotBlock)Blocks.FLOWER_POT).addPlant(ModBlocks.HIBISCUS_RED.getId(), ModBlocks.POTTED_HIBISCUS_RED);
 
-            net.reconhalcyon.hawaiinei.item.groups.MaterialItems.ALL.forEach((id, item) -> {
-                LOGGER.info("✔ Material item registered: {} → {}", id, item.getId());
-            });
+            ToolItems.ALL.forEach((id, item) ->
+                LOGGER.info("✔ Registered tool item {}", id)
+            );
         });
     }
 

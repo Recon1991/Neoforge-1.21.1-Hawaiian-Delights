@@ -11,18 +11,12 @@ import java.util.Map;
 public class FishItems {
     public static final Map<String, DeferredItem<Item>> ALL = new LinkedHashMap<>();
 
-    public static final DeferredItem<Item> BONEFISH = ITEMS.register("bonefish",
-            () -> new TooltipItem(new Item.Properties()));
-    public static final DeferredItem<Item> EYESTRIPE_SURGEONFISH = ITEMS.register("eyestripe_surgeonfish",
-            () -> new TooltipItem(new Item.Properties()));
-    public static final DeferredItem<Item> SQUIRRELFISH = ITEMS.register("squirrelfish",
-            () -> new TooltipItem(new Item.Properties()));
-    public static final DeferredItem<Item> HOGFISH = ITEMS.register("hogfish",
-            () -> new TooltipItem(new Item.Properties()));
-    public static final DeferredItem<Item> STRIPPED_MULLET = ITEMS.register("stripped_mullet",
-            () -> new TooltipItem(new Item.Properties()));
-    public static final DeferredItem<Item> YELLOWFIN_TUNA = ITEMS.register("yellowfin_tuna",
-            () -> new TooltipItem(new Item.Properties()));
+    public static final DeferredItem<Item> BONEFISH = registerTooltip("bonefish");
+    public static final DeferredItem<Item> EYESTRIPE_SURGEONFISH = registerTooltip("eyestripe_surgeonfish");
+    public static final DeferredItem<Item> SQUIRRELFISH = registerTooltip("squirrelfish");
+    public static final DeferredItem<Item> HOGFISH = registerTooltip("hogfish");
+    public static final DeferredItem<Item> STRIPPED_MULLET = registerTooltip("stripped_mullet");
+    public static final DeferredItem<Item> YELLOWFIN_TUNA = registerTooltip("yellowfin_tuna");
 
     private static DeferredItem<Item> registerTooltip(String name) {
         DeferredItem<Item> item = ModItems.ITEMS.register(name,

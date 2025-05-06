@@ -36,17 +36,60 @@
   "Hawaiian Cuisine": "",
   "item.hawaiinei.poke_bowl": "Poke Bowl",
   "tooltip.hawaiinei.poke_bowl": "Poke Bowl",
+
+  "Fuel Items": "",
   "item.hawaiinei.hot_stone": "Hot Stone",
-  "tooltip.hawaiinei.hot_stone": "Hot Stone",
+  "tooltip.hawaiinei.hot_stone": "A blazing stone that radiates intense heat.",
   "item.hawaiinei.hot_sand": "Hot Sand",
-  "tooltip.hawaiinei.hot_sand": "Hot Sand",
+  "tooltip.hawaiinei.hot_sand": "Superheated sand — surprisingly useful to heat other things.",
 
   "Hawaiian Crops/Plants": "",
   "item.hawaiinei.ti_plant_stalk": "Ti Plant Stalk",
   "tooltip.hawaiinei.ti_plant_stalk": "Ti Plant Stalk",
+
   "item.hawaiinei.ti_leaf": "Ti Leaf",
   "tooltip.hawaiinei.ti_leaf": "Ti Leaf",
+
   "block.hawaiinei.ti_plant": "Ti Plant",
+
+  "tooltip.hawaiinei.ohia_log": "Dense wood from the sacred ʻŌhiʻa tree.",
+  "tooltip.hawaiinei.ohia_planks": "Refined ʻŌhiʻa wood, ready for construction or fire.",
+  "tooltip.hawaiinei.ohia_sapling": "A young ʻŌhiʻa — burns quickly, but best planted.",
+
+  "tooltip.hawaiinei.hau_log": "Light and fibrous wood, excellent for kindling.",
+  "tooltip.hawaiinei.hau_planks": "Cut Hau wood with fast-burning properties.",
+  "tooltip.hawaiinei.hau_sapling": "A fragile sapling of the Hau tree.",
+
+  "tooltip.hawaiinei.kukui_log": "Heavy Kukui wood, dark and resinous.",
+  "tooltip.hawaiinei.kukui_planks": "Cut Kukui lumber, slow and steady burn.",
+  "tooltip.hawaiinei.kukui_sapling": "A sapling of the Kukui nut tree.",
+  "tooltip.hawaiinei.kukui_oil": "Highly flammable Kukui oil, used in traditional lamps.",
+
+  "tooltip.hawaiinei.macadamia_log": "Nut-bearing tree with dense wood.",
+  "tooltip.hawaiinei.macadamia_planks": "Strong and clean-burning macadamia wood.",
+  "tooltip.hawaiinei.macadamia_sapling": "Plant to grow a future fuel source.",
+
+  "tooltip.hawaiinei.mango_log": "Fruity mango wood, aromatic when burned.",
+  "tooltip.hawaiinei.mango_planks": "Versatile mango wood, burns moderately.",
+  "tooltip.hawaiinei.mango_sapling": "A juicy future — or a short burn now.",
+
+  "tooltip.hawaiinei.milo_log": "Traditional canoe wood, slow-burning.",
+  "tooltip.hawaiinei.milo_planks": "Smooth-burning Milo planks.",
+  "tooltip.hawaiinei.milo_sapling": "A Milo sapling, handle with care.",
+
+  "tooltip.hawaiinei.noni_log": "Unusual wood from the healing noni tree.",
+  "tooltip.hawaiinei.noni_planks": "Earthy and quick-burning noni wood.",
+  "tooltip.hawaiinei.noni_sapling": "A strange-smelling but useful sapling.",
+
+  "tooltip.hawaiinei.papaya_log": "Light papaya wood, burns fast.",
+  "tooltip.hawaiinei.papaya_planks": "Slices of papaya wood, ready to light.",
+  "tooltip.hawaiinei.papaya_sapling": "A papaya plant just getting started.",
+
+  "tooltip.hawaiinei.sandalwood_log": "Fragrant and prized, sandalwood burns long.",
+  "tooltip.hawaiinei.sandalwood_planks": "Aromatic sandalwood, perfect for ritual fires.",
+  "tooltip.hawaiinei.sandalwood_sapling": "A slow-growing, sacred sapling.",
+
+  "tooltip.hawaiinei.dried_ti_leaf": "Dried ti leaves — lightweight and flammable.",
 
   "block.hawaiinei.hibiscus_red": "Red Hibiscus",
   "block.hawaiinei.potted_hibiscus_red": "Potted Red Hibiscus",
@@ -61,5 +104,4 @@
   "creativetab.hawaiinei.hawaiinei_fish": "Hawai`i Nei Fish",
 
   "tooltip.hawaiinei.morphite_magic_block.tooltip": "Strange Alchemical Device, known for altering §9Morphite§r"
-
 }
