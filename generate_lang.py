@@ -5,6 +5,7 @@ import argparse
 from colorama import Fore, Style, init
 from collections import defaultdict
 from datetime import datetime
+from playsound import playsound
 import csv
 
 init(autoreset=True)
