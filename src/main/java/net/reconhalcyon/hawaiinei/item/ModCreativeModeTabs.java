@@ -55,13 +55,7 @@ public class ModCreativeModeTabs {
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(HawaiiNei.MOD_ID, "hawaiinei_blocks_tab"))
                     .title(Component.translatable("creativetab.hawaiinei.hawaiinei_fish"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.BONEFISH);
-                        output.accept(ModItems.EYESTRIPE_SURGEONFISH);
-                        output.accept(ModItems.HOGFISH);
-                        output.accept(ModItems.SQUIRRELFISH);
-                        output.accept(ModItems.STRIPPED_MULLET);
-                        output.accept(ModItems.YELLOWFIN_TUNA);
-
+                        net.reconhalcyon.hawaiinei.item.groups.FishItems.ALL.values().forEach(item -> output.accept(item.get()));
                     }).build());
 
     public static final Supplier<CreativeModeTab> PREVIEW_FUEL_TAB = CREATIVE_MODE_TAB.register("hawaiinei_fuel_tab",

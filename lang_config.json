@@ -1,0 +1,19 @@
+{
+  "groups": [
+    {
+      "type": "item",
+      "registry_dir": "src/main/java/net/reconhalcyon/hawaiinei/item/group",
+      "registry_prefix": "hawaiinei"
+    },
+    {
+      "type": "block",
+      "registry_dir": "src/main/java/net/reconhalcyon/hawaiinei/block/group",
+      "registry_prefix": "hawaiinei"
+    }
+  ],
+  "existing_lang_file": "src/main/resources/assets/hawaiinei/lang/en_us.json",
+  "output_file": "src/main/resources/assets/hawaiinei/lang/en_us.json",
+  "log_dir": "logs/lang_gen",
+  "csv_output": "registry_lang_export.csv",
+  "sort_keys": true
+}

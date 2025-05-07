@@ -38,11 +38,23 @@ public class ModItems {
             () -> new TooltipItem(new Item.Properties().food(ModFoodProperties.POKE_BOWL), "poke_bowl"));
 
     // Hawaiian Fish
+    public static final DeferredItem<Item> BLUEFIN_TREVALLY = FishItems.BLUEFIN_TREVALLY;
     public static final DeferredItem<Item> BONEFISH = FishItems.BONEFISH;
     public static final DeferredItem<Item> EYESTRIPE_SURGEONFISH = FishItems.EYESTRIPE_SURGEONFISH;
-    public static final DeferredItem<Item> SQUIRRELFISH = FishItems.SQUIRRELFISH;
+    public static final DeferredItem<Item> GREAT_BARRACUDA = FishItems.GREAT_BARRACUDA;
     public static final DeferredItem<Item> HOGFISH = FishItems.HOGFISH;
+    public static final DeferredItem<Item> MACKEREL_SCAD = FishItems.MACKEREL_SCAD;
+    public static final DeferredItem<Item> MARLIN = FishItems.MARLIN;
+    public static final DeferredItem<Item> MILKFISH = FishItems.MILKFISH;
+    public static final DeferredItem<Item> MOORISH_IDOL = FishItems.MOORISH_IDOL;
+    public static final DeferredItem<Item> PINK_SNAPPER = FishItems.PINK_SNAPPER;
+    public static final DeferredItem<Item> RACCOON_BUTTERFLYFISH = FishItems.RACCOON_BUTTERFLYFISH;
+    public static final DeferredItem<Item> SKIPJACK_TUNA = FishItems.SKIPJACK_TUNA;
+    public static final DeferredItem<Item> SQUIRRELFISH = FishItems.SQUIRRELFISH;
     public static final DeferredItem<Item> STRIPPED_MULLET = FishItems.STRIPPED_MULLET;
+    public static final DeferredItem<Item> TRIGGERFISH = FishItems.TRIGGERFISH;
+    public static final DeferredItem<Item> UNICORNFISH = FishItems.UNICORNFISH;
+    public static final DeferredItem<Item> WRASSE = FishItems.WRASSE;
     public static final DeferredItem<Item> YELLOWFIN_TUNA = FishItems.YELLOWFIN_TUNA;
 
     // Custom Fuel Items
