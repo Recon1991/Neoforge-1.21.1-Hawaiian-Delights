@@ -2,19 +2,31 @@ import os
 import json
 import re
 import argparse
+import pygame
 from colorama import Fore, Style, init
 from collections import defaultdict
 from datetime import datetime
-from playsound import playsound
 import csv
 
+# Initialize console colors and pygame sound mixer
 init(autoreset=True)
+pygame.mixer.init()
 
-log_dir = args.log_dir or config.get("log_dir", "langgen_logs")
-csv_output_path = args.csv_output or config.get("csv_output", "registry_lang_export.csv")
+
+def play_sound(path, volume=0.5):
+    if not path or not os.path.exists(path):
+        return
+    try:
+        sound = pygame.mixer.Sound(path)
+        sound.set_volume(volume)
+        sound.play()
+    except Exception as e:
+        print(f"(⚠️ Failed to play sound: {path} — {e})")
+
 
 def title_case(name):
     return name.replace("_", " ").title()
+
 
 def extract_keys_from_file(filepath, patterns):
     with open(filepath, "r", encoding="utf-8") as file:
@@ -24,9 +36,11 @@ def extract_keys_from_file(filepath, patterns):
         keys.extend(re.findall(pattern, content))
     return keys
 
+
 def load_config(config_path):
     with open(config_path, "r", encoding="utf-8") as f:
         return json.load(f)
+
 
 def print_diff_preview(new_entries, merged, max_width=60):
     for key in sorted(new_entries):
@@ -35,13 +49,14 @@ def print_diff_preview(new_entries, merged, max_width=60):
         rhs = f'"{val}"'
         print(Fore.GREEN + lhs + Fore.WHITE + rhs)
 
-def write_log(entries_added, entries_skipped, duplicates):
+
+def write_log(entries_added, entries_skipped, duplicates, log_dir):
     os.makedirs(log_dir, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     log_path = os.path.join(log_dir, f"langgen_{timestamp}.log")
 
     with open(log_path, "w", encoding="utf-8") as f:
-        f.write(f"Lang Gen Log - {timestamp}\n")
+        f.write(f"LangGen Log - {timestamp}\n")
         f.write(f"New entries added: {len(entries_added)}\n")
         f.write(f"Skipped existing entries: {len(entries_skipped)}\n")
         f.write(f"Duplicates found: {len(duplicates)}\n\n")
@@ -64,6 +79,7 @@ def write_log(entries_added, entries_skipped, duplicates):
     print(Fore.YELLOW + f"📄 Log written to {log_path}")
     return log_path
 
+
 def write_csv(full_dict, added_keys, existing_keys, output_path):
     with open(output_path, "w", newline="", encoding="utf-8") as csvfile:
         writer = csv.writer(csvfile)
@@ -73,9 +89,10 @@ def write_csv(full_dict, added_keys, existing_keys, output_path):
                 writer.writerow([k, v, "added"])
             elif k in existing_keys:
                 writer.writerow([k, v, "skipped"])
-    print(Fore.YELLOW + f"📊 CSV export written to {CSV_OUTPUT}")
+    print(Fore.YELLOW + f"📊 CSV export written to {output_path}")
 
-def print_footer_summary(lang_file, csv_file, log_file, added_count, skipped_count):
+
+def print_footer_summary(lang_file, csv_file, log_file, added_count, skipped_count, success_sound):
     print()
     print(Fore.MAGENTA + Style.BRIGHT + "✨ LangGen Complete!")
     print(Fore.CYAN + f"📘 Lang Entries Written:       {lang_file}")
@@ -87,6 +104,8 @@ def print_footer_summary(lang_file, csv_file, log_file, added_count, skipped_cou
     print(Fore.GREEN + f"✅ New Entries Added:          {added_count}")
     print(Fore.YELLOW + f"➖ Existing Entries Skipped:    {skipped_count}")
     print()
+
+    play_sound(success_sound, volume=0.5)
 
 
 def main():
@@ -101,10 +120,23 @@ def main():
     args = parser.parse_args()
 
     config = load_config(args.config)
-    registry_lang_entries = {}
-    key_sources = defaultdict(list)  # Track duplicate keys
 
-    # 🧠 Step 1: Parse registry sources
+    # Load sound paths from config
+    startup_sound = config.get("startup_sound")
+    success_sound = config.get("success_sound")
+
+    # Play startup chime
+    play_sound(startup_sound, volume=0.3)
+
+    registry_lang_entries = {}
+    key_sources = defaultdict(list)
+
+    # Determine paths
+    log_dir = args.log_dir or config.get("log_dir", "langgen_logs")
+    csv_output_path = args.csv_output or config.get("csv_output", "registry_lang_export.csv")
+    output_path = args.output_file or config["output_file"]
+
+    # 🧠 Step 1: Parse registry files
     for group in config["groups"]:
         group_type = group["type"]
         registry_dir = group["registry_dir"]
@@ -129,7 +161,6 @@ def main():
                         tooltip_key = f"tooltip.{prefix}.{key}"
                         key_sources[full_key].append(path)
                         key_sources[tooltip_key].append(path)
-
                         registry_lang_entries[full_key] = title_case(key)
                         registry_lang_entries[tooltip_key] = ""
 
@@ -143,21 +174,21 @@ def main():
                 print(Fore.YELLOW + f"    - {p}")
         return
 
-    # 👀 Step 3: Only show
+    # 👀 Step 3: Only show keys
     if args.only_show:
         print(Fore.CYAN + f"📦 Registry-derived lang keys ({len(registry_lang_entries)} total):")
         for k, v in sorted(registry_lang_entries.items()):
             print(f'"{k}": "{v}"')
         return
 
-    # 📂 Step 4: Load existing
+    # 📂 Step 4: Load existing entries
     existing_entries = {}
     existing_path = config.get("existing_lang_file")
     if existing_path and os.path.exists(existing_path):
         with open(existing_path, "r", encoding="utf-8") as f:
             existing_entries = json.load(f)
 
-    # 🔁 Step 5: Merge
+    # 🔁 Step 5: Merge and categorize
     merged = {**existing_entries}
     added_keys = []
     skipped_keys = []
@@ -172,38 +203,37 @@ def main():
     if config.get("sort_keys", False):
         merged = dict(sorted(merged.items()))
 
-    # 🧪 Step 6: Dry-run
+    # 🧪 Step 6: Dry-run only
     if args.dry_run:
         print(Fore.CYAN + f"🔍 Dry run: {len(added_keys)} new entries would be added:")
         print_diff_preview(added_keys, merged)
         if args.csv:
-            write_csv(registry_lang_entries, added_keys, skipped_keys)
-        write_log(added_keys, skipped_keys, duplicates)
+            write_csv(registry_lang_entries, added_keys, skipped_keys, csv_output_path)
+        write_log(added_keys, skipped_keys, duplicates, log_dir)
         return
 
-    # 💾 Step 7: Write output
-    output_path = args.output_file or config["output_file"]
+    # 💾 Step 7: Write final lang file
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(merged, f, indent=2, ensure_ascii=False)
-
     print(Fore.GREEN + f"✅ Lang file written to {output_path} with {len(added_keys)} new entries.")
 
-    log_path = None
+    # 📦 Step 8: Optional CSV + log
+    log_path = write_log(added_keys, skipped_keys, duplicates, log_dir)
     csv_path = None
-
     if args.csv:
         write_csv(registry_lang_entries, added_keys, skipped_keys, csv_output_path)
         csv_path = csv_output_path
 
-    log_path = write_log(added_keys, skipped_keys, duplicates, log_dir)
-
+    # 🎉 Final summary
     print_footer_summary(
         lang_file=output_path,
         csv_file=csv_path,
         log_file=log_path,
         added_count=len(added_keys),
-        skipped_count=len(skipped_keys)
+        skipped_count=len(skipped_keys),
+        success_sound=success_sound
     )
+
 
 if __name__ == "__main__":
     main()
