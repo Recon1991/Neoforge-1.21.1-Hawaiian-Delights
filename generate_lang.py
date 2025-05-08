@@ -50,6 +50,34 @@ def print_diff_preview(new_entries, merged, max_width=60):
         print(Fore.GREEN + lhs + Fore.WHITE + rhs)
 
 
+def check_config_structure(config):
+    errors = []
+
+    # Top-level keys
+    required_top_keys = ["groups", "output_file"]
+    for key in required_top_keys:
+        if key not in config:
+            errors.append(f"Missing required top-level key: '{key}'")
+
+    # Group entries
+    if "groups" in config:
+        if not isinstance(config["groups"], list):
+            errors.append("'groups' must be a list.")
+        else:
+            for i, group in enumerate(config["groups"]):
+                for required_key in ["type", "registry_dir", "registry_prefix"]:
+                    if required_key not in group:
+                        errors.append(f"Group #{i + 1} is missing '{required_key}'")
+
+    # Optional path checks
+    for path_key in ["existing_lang_file", "startup_sound", "success_sound"]:
+        path = config.get(path_key)
+        if path and not os.path.exists(path):
+            errors.append(f"File not found: {path_key} → {path}")
+
+    return errors
+
+
 def write_log(entries_added, entries_skipped, duplicates, log_dir):
     os.makedirs(log_dir, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -117,6 +145,8 @@ def main():
     parser.add_argument("--config", default="lang_config.json", help="Path to config JSON file.")
     parser.add_argument("--csv-output", help="Path to write CSV export.")
     parser.add_argument("--log-dir", help="Directory for log files.")
+    parser.add_argument("--check-config", action="store_true", help="Validate config and exit.")
+
     args = parser.parse_args()
 
     config = load_config(args.config)
@@ -223,6 +253,17 @@ def main():
     if args.csv:
         write_csv(registry_lang_entries, added_keys, skipped_keys, csv_output_path)
         csv_path = csv_output_path
+
+    if args.check_config:
+        config = load_config(args.config)
+        errors = check_config_structure(config)
+        if errors:
+            print(Fore.RED + "❌ Config validation failed with the following issues:")
+            for err in errors:
+                print(Fore.LIGHTRED_EX + f"  - {err}")
+            return
+        print(Fore.GREEN + "✅ Config validation successful. All required fields are present and valid.")
+        return
 
     # 🎉 Final summary
     print_footer_summary(
