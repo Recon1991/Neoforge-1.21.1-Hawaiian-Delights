@@ -17,5 +17,6 @@
   "success_sound": "src/main/resources/assets/hawaiinei/sounds/sfx/sound-6.ogg",
   "log_dir": "logs/lang_gen",
   "csv_output": "registry_lang_export.csv",
+  "sort_mode": "grouped",
   "sort_keys": true
 }

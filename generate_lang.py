@@ -78,6 +78,31 @@ def check_config_structure(config):
     return errors
 
 
+def sort_lang_entries_grouped(lang_dict, prefix_order=("item", "tooltip")):
+    grouped = defaultdict(dict)
+
+    for key, val in lang_dict.items():
+        parts = key.split(".")
+        if len(parts) >= 3:
+            key_type, _, base_name = parts[0], parts[1], ".".join(parts[2:])
+            grouped[base_name][key_type] = (key, val)
+        else:
+            grouped[key] = {"misc": (key, val)}
+
+    sorted_result = {}
+
+    for base in sorted(grouped.keys()):
+        for prefix in prefix_order:
+            if prefix in grouped[base]:
+                k, v = grouped[base][prefix]
+                sorted_result[k] = v
+        if "misc" in grouped[base]:
+            k, v = grouped[base]["misc"]
+            sorted_result[k] = v
+
+    return sorted_result
+
+
 def write_log(entries_added, entries_skipped, duplicates, log_dir):
     os.makedirs(log_dir, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -106,6 +131,31 @@ def write_log(entries_added, entries_skipped, duplicates, log_dir):
 
     print(Fore.YELLOW + f"📄 Log written to {log_path}")
     return log_path
+
+def sort_lang_entries_grouped(lang_dict, prefix_order=("item", "tooltip")):
+    grouped = defaultdict(dict)
+
+    for key, val in lang_dict.items():
+        # Parse keys like item.hawaiinei.kukui_oil
+        parts = key.split(".")
+        if len(parts) >= 3:
+            key_type, _, base_name = parts[0], parts[1], ".".join(parts[2:])
+            grouped[base_name][key_type] = (key, val)
+        else:
+            grouped[key] = {"misc": (key, val)}
+
+    sorted_result = {}
+
+    for base in sorted(grouped.keys()):
+        for prefix in prefix_order:
+            if prefix in grouped[base]:
+                k, v = grouped[base][prefix]
+                sorted_result[k] = v
+        if "misc" in grouped[base]:
+            k, v = grouped[base]["misc"]
+            sorted_result[k] = v
+
+    return sorted_result
 
 
 def write_csv(full_dict, added_keys, existing_keys, output_path):
@@ -230,7 +280,11 @@ def main():
         else:
             skipped_keys.append(k)
 
-    if config.get("sort_keys", False):
+    sort_mode = config.get("sort_mode", "flat")
+
+    if sort_mode == "grouped":
+        merged = sort_lang_entries_grouped(merged)
+    elif config.get("sort_keys", False) or sort_mode == "flat":
         merged = dict(sorted(merged.items()))
 
     # 🧪 Step 6: Dry-run only

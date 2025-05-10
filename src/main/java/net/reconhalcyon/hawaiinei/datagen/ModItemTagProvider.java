@@ -25,8 +25,6 @@ public class ModItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
         tag(ModTags.Items.TRANSFORMABLE_ITEMS)
-                .add(MaterialItems.MORPHITE_INGOT.get())
-                .add(ModItems.RAW_MORPHITE.get())
                 .add(Items.BOWL);
 
         tag(ModTags.Items.HAWAIINEI_FISH)
