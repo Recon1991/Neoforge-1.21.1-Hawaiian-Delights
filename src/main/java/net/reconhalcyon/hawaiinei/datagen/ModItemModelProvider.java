@@ -9,6 +9,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.reconhalcyon.hawaiinei.HawaiiNei;
 import net.reconhalcyon.hawaiinei.block.ModBlocks;
 import net.reconhalcyon.hawaiinei.item.ModItems;
+import net.reconhalcyon.hawaiinei.item.groups.FishItems;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper){
@@ -32,12 +33,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.POKE_BOWL.get());
 
         // Hawaiian Fish
-        basicItem(ModItems.YELLOWFIN_TUNA.get());
-        basicItem(ModItems.BONEFISH.get());
-        basicItem(ModItems.EYESTRIPE_SURGEONFISH.get());
-        basicItem(ModItems.HOGFISH.get());
-        basicItem(ModItems.SQUIRRELFISH.get());
-        basicItem(ModItems.STRIPPED_MULLET.get());
+        FishItems.ALL.values().forEach(fish -> basicItem(fish.get()));
 
         // Fuel Items
         basicItem(ModItems.HOT_SAND.get());

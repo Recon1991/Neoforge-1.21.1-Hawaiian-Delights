@@ -38,24 +38,42 @@ public class ModItems {
             () -> new TooltipItem(new Item.Properties().food(ModFoodProperties.POKE_BOWL), "poke_bowl"));
 
     // Hawaiian Fish
+    public static final DeferredItem<Item> ACHILLES_TANG = FishItems.ACHILLES_TANG;
+    public static final DeferredItem<Item> BLACKTAIL_SNAPPER = FishItems.BLACKTAIL_SNAPPER;
     public static final DeferredItem<Item> BLUEFIN_TREVALLY = FishItems.BLUEFIN_TREVALLY;
+    public static final DeferredItem<Item> BLUELINED_SNAPPER = FishItems.BLUELINED_SNAPPER;
     public static final DeferredItem<Item> BONEFISH = FishItems.BONEFISH;
+    public static final DeferredItem<Item> CONVICT_TANG = FishItems.CONVICT_TANG;
     public static final DeferredItem<Item> EYESTRIPE_SURGEONFISH = FishItems.EYESTRIPE_SURGEONFISH;
+    public static final DeferredItem<Item> GIANT_TREVALLY = FishItems.GIANT_TREVALLY;
+    public static final DeferredItem<Item> GOLDRING_SURGEONFISH = FishItems.GOLDRING_SURGEONFISH;
     public static final DeferredItem<Item> GREAT_BARRACUDA = FishItems.GREAT_BARRACUDA;
     public static final DeferredItem<Item> HOGFISH = FishItems.HOGFISH;
+    public static final DeferredItem<Item> JUVENILE_TREVALLY = FishItems.JUVENILE_TREVALLY;
+    public static final DeferredItem<Item> LONGNOSE_BUTTERFLYFISH = FishItems.LONGNOSE_BUTTERFLYFISH;
     public static final DeferredItem<Item> MACKEREL_SCAD = FishItems.MACKEREL_SCAD;
+    public static final DeferredItem<Item> MANYBAR_GOATFISH = FishItems.MANYBAR_GOATFISH;
     public static final DeferredItem<Item> MARLIN = FishItems.MARLIN;
     public static final DeferredItem<Item> MILKFISH = FishItems.MILKFISH;
     public static final DeferredItem<Item> MOORISH_IDOL = FishItems.MOORISH_IDOL;
+    public static final DeferredItem<Item> ORANGEBAND_SURGEONFISH = FishItems.ORANGEBAND_SURGEONFISH;
+    public static final DeferredItem<Item> PACIFIC_THREADFIN = FishItems.PACIFIC_THREADFIN;
+    public static final DeferredItem<Item> PARROTFISH = FishItems.PARROTFISH;
     public static final DeferredItem<Item> PINK_SNAPPER = FishItems.PINK_SNAPPER;
     public static final DeferredItem<Item> RACCOON_BUTTERFLYFISH = FishItems.RACCOON_BUTTERFLYFISH;
+    public static final DeferredItem<Item> RUBY_SNAPPER = FishItems.RUBY_SNAPPER;
+    public static final DeferredItem<Item> SAILFIN_TANG = FishItems.SAILFIN_TANG;
     public static final DeferredItem<Item> SKIPJACK_TUNA = FishItems.SKIPJACK_TUNA;
+    public static final DeferredItem<Item> SOLDIERFISH = FishItems.SOLDIERFISH;
     public static final DeferredItem<Item> SQUIRRELFISH = FishItems.SQUIRRELFISH;
+    public static final DeferredItem<Item> STOCKY_HAWKFISH = FishItems.STOCKY_HAWKFISH;
     public static final DeferredItem<Item> STRIPPED_MULLET = FishItems.STRIPPED_MULLET;
     public static final DeferredItem<Item> TRIGGERFISH = FishItems.TRIGGERFISH;
+    public static final DeferredItem<Item> TRUMPETFISH = FishItems.TRUMPETFISH;
     public static final DeferredItem<Item> UNICORNFISH = FishItems.UNICORNFISH;
     public static final DeferredItem<Item> WRASSE = FishItems.WRASSE;
     public static final DeferredItem<Item> YELLOWFIN_TUNA = FishItems.YELLOWFIN_TUNA;
+    public static final DeferredItem<Item> YELLOWSTRIPE_GOATFISH = FishItems.YELLOWSTRIPE_GOATFISH;
 
     // Custom Fuel Items
     public static final DeferredItem<Item> HOT_STONE = FuelItems.HOT_STONE;
