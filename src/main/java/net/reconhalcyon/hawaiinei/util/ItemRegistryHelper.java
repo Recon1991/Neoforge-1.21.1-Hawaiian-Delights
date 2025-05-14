@@ -58,4 +58,24 @@ public class ItemRegistryHelper {
         allMap.put(name, item);
         return item;
     }
+
+    public static DeferredItem<Item> registerTooltipFish(
+            String name,
+            Item.Properties props,
+            String biome,
+            String rarity,
+            boolean spearCatchable,
+            Map<String, DeferredItem<Item>> allMap
+    ) {
+        DeferredItem<Item> item = ModItems.ITEMS.register(name, () ->
+                new TooltipFishItem(props, name)
+                        .fishBiome(biome)
+                        .fishRarity(rarity)
+                        .spearCatchable(spearCatchable)
+        );
+
+        allMap.put(name, item);
+        return item;
+    }
+
 }
